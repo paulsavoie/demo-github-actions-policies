@@ -1,0 +1,24 @@
+# This is a policy file for the project 'executable' and the signing policy 'release-signing'
+
+github-policies:
+  runners:
+    runner_groups:
+      - 'GitHub Actions'                                   # all jobs need to run on GitHub-hosted runners
+  build:
+    disallow_reruns: true
+  branch:
+    - rules:
+      - non_fast_foward:                                   # force pushes are prevented
+      - pull_request:                                      # code reviews are required
+        minimum_required_approving_review_count : 1
+        dismiss_stale_reviews_on_push: true
+        require_code_owner_review: true 
+        require_last_push_approval: true
+        required_review_thread_resolution: true
+      - code_scanning:                                     # code scanning must not reveal problems
+        tools:
+          - tool: CodeQL
+            alerts_threshold: Errors
+            security_alerts_threshold: MediumOrHigher
+      allow_bypass_actors: true                            # some people may bypass these rules
+      enforced_from: '2024-11-07 17:00'                    # rule enforcement history is checked
