@@ -3,7 +3,7 @@
 This repository demonstrates how SignPath validates GitHub rulesets and other policies.
 
 ## References 
-* See [.signpath/policies/release-signing.yml](.signpath/policies/release-signing.yml) for the policy definition.
+* See [.signpath/policies/release-signing.yml](.signpath/policies/executable/release-signing.yml) for the policy definition.
 * See [.github/workflows/sign.yml](.github/workflows/sign.yml) for the workflow definition.
 
 ## Demo cases
