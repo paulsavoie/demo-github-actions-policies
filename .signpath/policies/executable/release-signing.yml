@@ -2,7 +2,7 @@
 
 github-policies:
   runners:
-    runner_groups:
+    allowed_groups:
       - 'GitHub Actions'                                   # all jobs need to run on GitHub-hosted runners
   build:
     disallow_reruns: true
