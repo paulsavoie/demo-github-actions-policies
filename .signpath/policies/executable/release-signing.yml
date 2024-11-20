@@ -6,19 +6,20 @@ github-policies:
       - 'GitHub Actions'                                   # all jobs need to run on GitHub-hosted runners
   build:
     disallow_reruns: true
-  branch:
-    - rules:
-      - non_fast_foward:                                   # force pushes are prevented
-      - pull_request:                                      # code reviews are required
-        minimum_required_approving_review_count : 1
-        dismiss_stale_reviews_on_push: true
-        require_code_owner_review: true 
-        require_last_push_approval: true
-        required_review_thread_resolution: true
-      - code_scanning:                                     # code scanning must not reveal problems
-        tools:
-          - tool: CodeQL
-            alerts_threshold: Errors
-            security_alerts_threshold: MediumOrHigher
+  branch_conditions:
+    - conditions:
+        rules:
+        - non_fast_foward:                                   # force pushes are prevented
+        - pull_request:                                      # code reviews are required
+            min_required_approvals: 1
+            dismiss_stale_reviews_on_push: true
+            require_code_owner_review: true
+            require_last_push_approval: true
+            required_review_thread_resolution: true
+        - require_code_scanning:                                     # code scanning must not reveal problems
+            tools:
+              - tool: CodeQL
+                min_alerts_threshold: errors
+                min_security_alerts_threshold: medium
       allow_bypass_actors: true                            # some people may bypass these rules
       enforced_from: '2024-11-07 17:00'                    # rule enforcement history is checked
