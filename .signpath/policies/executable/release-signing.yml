@@ -6,7 +6,7 @@ github-policies:
       - 'GitHub Actions'                                   # all jobs need to run on GitHub-hosted runners
   build:
     disallow_reruns: true
-  branch_conditions:
+  branch_rulesets:
     - conditions:
         rules:
         - non_fast_foward:                                   # force pushes are prevented
