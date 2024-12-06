@@ -9,8 +9,8 @@ github-policies:
   branch_rulesets:
     - conditions:
         rules:
-        - non_fast_foward:                                   # force pushes are prevented
-        - pull_request:                                      # code reviews are required
+        - block_force_pushes:                                # force pushes are prevented
+        - require_pull_request:                                      # code reviews are required
             min_required_approvals: 1
             dismiss_stale_reviews_on_push: true
             require_code_owner_review: true
