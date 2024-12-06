@@ -7,7 +7,7 @@ github-policies:
   build:
     disallow_reruns: true
   branch_rulesets:
-    - conditions:
+    - condition:
         rules:
         - block_force_pushes:                                # force pushes are prevented
         - require_pull_request:                                      # code reviews are required
