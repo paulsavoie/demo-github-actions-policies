@@ -12,7 +12,7 @@ This repository demonstrates how SignPath validates GitHub rulesets and other po
 SignPath checks that the policies have been applied to the given branch. On the `releases/weaker-condition` branch, the **code scanning** ruleset rule is not enforced. SignPath will not allow signing builds from that release.
 
 ### Prevention of interrupted conditions
-For the `releases/interrupted-condition` branch, the ruleset has been temporarily disabled between TODO and TODO, allowing e.g. commits without code reviews. SignPath catches such interruptions and prevents the software from being signed.
+For the `releases/interrupted-condition` branch, the ruleset has been temporarily disabled between 2024-12-12 11:07 UTC and TODO, allowing e.g. commits without code reviews. SignPath catches such interruptions and prevents the software from being signed.
 
 ### Prevention of re-runs
 See build [TODO](TODO) for an old failed build that has been re-run even though re-runs are not allowed. SignPath can optionally prevent re-runs to avoid situations where old, vulnerable states of the software are re-built and signed.
