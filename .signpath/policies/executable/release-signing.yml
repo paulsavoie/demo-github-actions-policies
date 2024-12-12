@@ -3,20 +3,21 @@
 github-policies:
   runners:
     allowed_groups:
-      - 'GitHub Actions'                                   # all jobs need to run on GitHub-hosted runners
+      - 'GitHub Actions'                                       # all jobs need to run on GitHub-hosted runners
   build:
     disallow_reruns: true
   branch_rulesets:
     - condition:
         rules:
-          - non_fast_forward:                                # force pushes are prevented
-          - require_pull_request:                                      # code reviews are required
+          - block_force_pushes:                                # force pushes are prevented
+          - require_pull_request:                              # code reviews are required
               min_required_approvals: 1
+              min_required_approvals: 20
               dismiss_stale_reviews_on_push: true
               require_code_owner_review: true
               require_last_push_approval: true
               required_review_thread_resolution: true
-          - code_scanning:                                     # code scanning must not reveal problems
+          - code_scanning:                                    # code scanning must not reveal problems
               tools:
                 - tool: CodeQL
                   min_alerts_threshold: errors
