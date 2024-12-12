@@ -22,4 +22,4 @@ github-policies:
                   min_alerts_threshold: errors
                   min_security_alerts_threshold: medium
         allow_bypass_actors: true                            # some people may bypass these rules
-        enforced_from: '2024-12-07 17:00'                    # rule enforcement history is checked
+        enforced_from: '2024-11-07 17:00'                    # rule enforcement history is checked
