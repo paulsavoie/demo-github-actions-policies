@@ -25,9 +25,10 @@ jobs:
           name: 'unsigned'
           if-no-files-found: error
           path: random.dll
-      
+
+      # TODO: change action version to v1.1 when released
       - name: Submit Signing Request
-        uses: signpath/github-action-submit-signing-request@v1
+        uses: signpath/github-action-submit-signing-request@main
         with:
           # TODO: change after rollout
           connector-url: 'https://githubactions-qa1.connectors.dev.signpath.io:15021'
