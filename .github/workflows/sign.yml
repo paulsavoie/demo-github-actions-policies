@@ -31,7 +31,7 @@ jobs:
         uses: signpath/github-action-submit-signing-request@main
         with:
           # TODO: change after rollout
-          connector-url: 'https://githubactions-qa1.connectors.dev.signpath.io:15021'
+          connector-url: 'https://githubactions.connectors.fqa.test.signpath.io:15021'
           api-token: '${{ secrets.SIGNPATH_API_TOKEN }}'
           organization-id: '${{ vars.SIGNPATH_ORGANIZATION_ID }}'
           project-slug: 'executable'
